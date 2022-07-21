@@ -2315,12 +2315,11 @@ static u8 run_target(char** argv, u32 timeout, u8* testcase, u32 size) {
     }
 
     if (size >= TESTCASE_SIZE) {
-        printf("##################################invalid testcase size %d\n", size);
+        printf("too larger testcase size %d\n", size);
         return FAULT_NONE;
     }
 
     while (afl_con->AFL_input == 1) { // wait for result
-        printf("##################################should not be here\n");
         usleep(1);
     };
 
